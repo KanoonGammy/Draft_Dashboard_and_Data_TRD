@@ -18,10 +18,14 @@ import yfinance as yf
 st.set_page_config(page_title="Dashboard", layout="wide")
 st.title("Main Dashboard")
 
-gold = yf.Ticker("GC=F")  # Gold Futures
-silver = yf.Ticker("SI=F")  # Silver Futures
-copper = yf.Ticker("HG=F")  # Copper Futures
-
+@st.cache_data(ttl=600)
+def get_data():
+    gold = yf.Ticker("GC=F")  # Gold Futures
+    silver = yf.Ticker("SI=F")  # Silver Futures
+    copper = yf.Ticker("HG=F")  # Copper Futures
+    return gold, silver, copper
+    
+gold,silver,copper = get_data()
 
 tabs = st.tabs(["Overview", "Future", "Present", "Past"])
 
