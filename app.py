@@ -16,7 +16,7 @@ import Estimated_production_coin
 import yfinance as yf
 
 st.set_page_config(page_title="Dashboard", layout="wide")
-st.title("Main Dashboard")
+st.title("Draft Dashboard")
 
 # @st.cache_data(ttl=600)
 # def get_data():
@@ -25,7 +25,7 @@ st.title("Main Dashboard")
 #     copper = yf.Ticker("HG=F")  # Copper Futures
 #     return gold, silver, copper
     
-gold,silver,copper = get_data()
+# gold,silver,copper = get_data()
 
 tabs = st.tabs(["Overview", "Future", "Present", "Past"])
 
