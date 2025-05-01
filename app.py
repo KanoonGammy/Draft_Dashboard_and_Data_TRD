@@ -27,7 +27,7 @@ st.title("Draft Dashboard")
     
 # gold,silver,copper = get_data()
 
-tabs = st.tabs( "Future", "Present", "Past"])
+tabs = st.tabs( ["Future", "Present", "Past"])
 
 # Tab 1: Overview (แบ่ง 3 คอลัมน์)
 # with tabs[0]:
