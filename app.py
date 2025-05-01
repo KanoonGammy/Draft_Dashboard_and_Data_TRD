@@ -18,12 +18,12 @@ import yfinance as yf
 st.set_page_config(page_title="Dashboard", layout="wide")
 st.title("Main Dashboard")
 
-@st.cache_data(ttl=600)
-def get_data():
-    gold = yf.Ticker("GC=F")  # Gold Futures
-    silver = yf.Ticker("SI=F")  # Silver Futures
-    copper = yf.Ticker("HG=F")  # Copper Futures
-    return gold, silver, copper
+# @st.cache_data(ttl=600)
+# def get_data():
+#     gold = yf.Ticker("GC=F")  # Gold Futures
+#     silver = yf.Ticker("SI=F")  # Silver Futures
+#     copper = yf.Ticker("HG=F")  # Copper Futures
+#     return gold, silver, copper
     
 gold,silver,copper = get_data()
 
@@ -34,14 +34,14 @@ with tabs[0]:
     st.subheader("Overview")
     col1, col2, col3 = st.columns(3)
 
-    with col1:
-        st.metric("ราคาทองคำ",f"{gold.history(period="3d")['Close'].iloc[-1]:.2f} USD",f"{gold.history(period="3d")['Close'].iloc[-1]/gold.history(period="3d")['Close'].iloc[-2]-1 :.2%}")
+    # with col1:
+    #     st.metric("ราคาทองคำ",f"{gold.history(period="3d")['Close'].iloc[-1]:.2f} USD",f"{gold.history(period="3d")['Close'].iloc[-1]/gold.history(period="3d")['Close'].iloc[-2]-1 :.2%}")
 
-    with col2:
-        st.metric("ราคาเงิน",f"{silver.history(period="3d")['Close'].iloc[-1]:.2f} USD",f"{silver.history(period="3d")['Close'].iloc[-1]/silver.history(period="3d")['Close'].iloc[-2]-1 :.2%}")
+    # with col2:
+    #     st.metric("ราคาเงิน",f"{silver.history(period="3d")['Close'].iloc[-1]:.2f} USD",f"{silver.history(period="3d")['Close'].iloc[-1]/silver.history(period="3d")['Close'].iloc[-2]-1 :.2%}")
 
-    with col3:
-        st.metric("ราคาทองแดง",f"{copper.history(period="3d")['Close'].iloc[-1]:.2f} USD",f"{copper.history(period="3d")['Close'].iloc[-1]/copper.history(period="3d")['Close'].iloc[-2]-1:.2%}")
+    # with col3:
+    #     st.metric("ราคาทองแดง",f"{copper.history(period="3d")['Close'].iloc[-1]:.2f} USD",f"{copper.history(period="3d")['Close'].iloc[-1]/copper.history(period="3d")['Close'].iloc[-2]-1:.2%}")
 
 
 #     owf1, owf2 = Historical_disbursment_redemption.figures()
