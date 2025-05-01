@@ -27,12 +27,12 @@ st.title("Draft Dashboard")
     
 # gold,silver,copper = get_data()
 
-tabs = st.tabs(["Overview", "Future", "Present", "Past"])
+tabs = st.tabs( "Future", "Present", "Past"])
 
 # Tab 1: Overview (แบ่ง 3 คอลัมน์)
-with tabs[0]:
-    st.subheader("Overview")
-    col1, col2, col3 = st.columns(3)
+# with tabs[0]:
+#     st.subheader("Overview")
+#     col1, col2, col3 = st.columns(3)
 
     # with col1:
     #     st.metric("ราคาทองคำ",f"{gold.history(period="3d")['Close'].iloc[-1]:.2f} USD",f"{gold.history(period="3d")['Close'].iloc[-1]/gold.history(period="3d")['Close'].iloc[-2]-1 :.2%}")
@@ -62,7 +62,7 @@ with tabs[0]:
 
     
 # Tab 2: Future
-with tabs[1]:
+with tabs[0]:
     options_future = {
         "ประมาณการความต้องการเหรียญกษาปณ์": Forcast_Plan
     }
@@ -70,7 +70,7 @@ with tabs[1]:
     options_future[selected_future].render()
 
 # Tab 3: Present
-with tabs[2]:
+with tabs[1]:
     options_present = {
         "แผน-ผลผลิตเหรียญกษาปณ์ประจำปี": Coin_production,
         "จำนวนเหรียญหมุนเวียนในระบบเศรษฐกิจ": Coin_economy,
@@ -81,7 +81,7 @@ with tabs[2]:
     options_present[selected_present].render()
 
 # Tab 4: Past
-with tabs[3]:
+with tabs[2]:
     options_past = {
         "จ่ายแลกและรับคืนเหรียญกษาปณ์ปีงบประมาณ 2563 ถึง 2567": Historical_disbursment_redemption,
         "ผลการผลิตเหรียญย้อนหลัง (พ.ศ. 2563 - 2567)": Historical_Coin_Production_Data,
