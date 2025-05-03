@@ -66,7 +66,7 @@ with tabs[0]:
     options_future = {
         "ประมาณการความต้องการเหรียญกษาปณ์": Forcast_Plan
     }
-    selected_future = st.selectbox("เลือกหัวข้อ", list(options_future.keys()), key="future_select")
+    selected_future = st.selectbox("***เลือกหัวข้อ***", list(options_future.keys()), key="future_select")
     options_future[selected_future].render()
 
 # Tab 3: Present
@@ -77,7 +77,7 @@ with tabs[1]:
         "สถิติการนำส่งเหรียญกษาปณ์หมุนเวียนจากกองกษาปณ์ให้กองบริหารเงินตรา ประจำปีงบประมาณ 2568": Mint_MMD,
         "จ่ายสุทธิรายปีของแต่ละหน่วยงาน (2563 - 2568)": Historical_issued_redemption
     }
-    selected_present = st.selectbox("เลือกหัวข้อ", list(options_present.keys()), key="present_select")
+    selected_present = st.selectbox("***เลือกหัวข้อ***", list(options_present.keys()), key="present_select")
     options_present[selected_present].render()
 
 # Tab 4: Past
@@ -88,5 +88,5 @@ with tabs[2]:
         "สถิติการจัดซื้อเหรียญกษาปณ์แยกตามปี": Historical_Cost_of_minting_coins,
         "แผนประมาณการต้นทุนผลิตเหรียญกษาปณ์": Estimated_production_coin
     }
-    selected_past = st.selectbox("เลือกหัวข้อ", list(options_past.keys()), key="past_select")
+    selected_past = st.selectbox("***เลือกหัวข้อ***", list(options_past.keys()), key="past_select")
     options_past[selected_past].render()
