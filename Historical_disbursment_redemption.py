@@ -211,7 +211,9 @@ def render():
 
     with st.expander("📋 ปริมาณรับคืนเหรียญกษาปณ์ ปีงบประมาณ 2563 ถึง 2567"):
         st.dataframe(df_combined, use_container_width=True)
-     
+        csv3 = df_combined.to_csv(index=False).encode('utf-8-sig')
+        st.download_button("📅 ดาวน์โหลดข้อมูล (CSV)", csv3, file_name="ยอดรวมรับคืนเหรียญ.csv", key="download3")
+        
 def figures():
     df2 = pd.read_csv("จ่ายแลกส่วนกลาง+hub.csv")
 
