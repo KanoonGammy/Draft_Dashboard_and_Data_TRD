@@ -209,7 +209,7 @@ def render():
     fig.update_xaxes(type='category', tickmode='linear', showticklabels=True)
     st.plotly_chart(fig, use_container_width=True)
 
-    with st.expander("📋 ปริมาณรับคืนเหรียญกษาปณ์ ปีงบประมาณ 2563 ถึง 2567", key="download3"):
+    with st.expander("📋 ปริมาณรับคืนเหรียญกษาปณ์ ปีงบประมาณ 2563 ถึง 2567"):
         st.dataframe(df_combined, use_container_width=True)
      
 def figures():
