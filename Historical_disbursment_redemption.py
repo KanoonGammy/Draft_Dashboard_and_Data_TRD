@@ -91,7 +91,7 @@ def render():
     with st.expander("📄 จ่ายแลกเหรียญกษาปณ์ปีงบประมาณ 2563 ถึง 2567"):
         st.dataframe(df3, use_container_width=True)
         csv_data = df3.to_csv(index=False).encode('utf-8-sig')
-        st.download_button("📅 ดาวน์โหลดข้อมูล (CSV)", csv_data, file_name="ยอดรวมจ่ายแลกเหรียญ.csv")
+        st.download_button("📅 ดาวน์โหลดข้อมูล (CSV)", csv_data, file_name="ยอดรวมจ่ายแลกเหรียญ.csv", key="download1")
 
     
     st.title("📊 จ่ายแลกและรับคืนเหรียญกษาปณ์ปีงบประมาณ 2563 ถึง 2567")
@@ -149,7 +149,7 @@ def render():
     with st.expander("📄 จ่ายแลกเหรียญกษาปณ์ปีงบประมาณ 2563 ถึง 2567"):
         st.dataframe(summary_df2, use_container_width=True)
         csv2 = summary_df2.to_csv(index=False).encode('utf-8-sig')
-        st.download_button("📅 ดาวน์โหลดข้อมูล (CSV)", csv2, file_name="ยอดรวมจ่ายแลกเหรียญ.csv")
+        st.download_button("📅 ดาวน์โหลดข้อมูล (CSV)", csv2, file_name="ยอดรวมจ่ายแลกเหรียญ.csv", key="download2")
 
 
     data = pd.read_csv("รับคืนส่วนกลาง+HUB.csv")
@@ -209,7 +209,7 @@ def render():
     fig.update_xaxes(type='category', tickmode='linear', showticklabels=True)
     st.plotly_chart(fig, use_container_width=True)
 
-    with st.expander("📋 ปริมาณรับคืนเหรียญกษาปณ์ ปีงบประมาณ 2563 ถึง 2567"):
+    with st.expander("📋 ปริมาณรับคืนเหรียญกษาปณ์ ปีงบประมาณ 2563 ถึง 2567", key="download3"):
         st.dataframe(df_combined, use_container_width=True)
      
 def figures():
