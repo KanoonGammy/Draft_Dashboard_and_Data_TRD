@@ -129,13 +129,13 @@ def render():
     df3 = df3.rename(columns={"รวม": "จ่ายแลก"})
     
     # แปลงคอลัมน์ 'เดือน' เป็น datetime อย่างปลอดภัย
-    df3['เดือน'] = pd.to_datetime(df3['เดือน'], errors='coerce', dayfirst=True)
+    # df3['เดือน'] = pd.to_datetime(df3['เดือน'], errors='coerce', dayfirst=True)
     
     # ลบแถวที่แปลงวันที่ไม่ได้
-    df3 = df3.dropna(subset=['เดือน'])
+    #  df3 = df3.dropna(subset=['เดือน'])
     
     # เรียงตามลำดับเวลา
-    df3 = df3.sort_values('เดือน')
+    # df3 = df3.sort_values('เดือน')
     
     # เพิ่มคอลัมน์ความแตกต่าง
     df3['ผลต่าง'] = df3['จ่ายแลก'] - df3['รับคืน']
