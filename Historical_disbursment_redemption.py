@@ -124,10 +124,10 @@ def render():
      
     # โหลดข้อมูล
     df3 = pd.read_csv("จ่ายแลกส่วนกลาง+hub.csv")
-    
+    st.write(df3)
     # เปลี่ยนชื่อคอลัมน์ 'รวม' เป็น 'จ่ายแลก'
     df3 = df3.rename(columns={"รวม": "จ่ายแลก"})
-    
+    st.write(df3)
     # แปลงคอลัมน์ 'เดือน' เป็น datetime อย่างปลอดภัย
     # df3['เดือน'] = pd.to_datetime(df3['เดือน'], errors='coerce', dayfirst=True)
     
@@ -139,7 +139,7 @@ def render():
     
     # เพิ่มคอลัมน์ความแตกต่าง
     df3['ผลต่าง'] = df3['จ่ายแลก'] - df3['รับคืน']
-    
+    st.write(df3)
     # แปลงข้อมูลเป็นตัวเลขเผื่อมีปัญหาการพล็อต
     cols_to_convert = ['จ่ายแลก', 'รับคืน', 'ผลต่าง']
     df3[cols_to_convert] = df3[cols_to_convert].apply(pd.to_numeric, errors='coerce')
