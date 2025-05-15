@@ -137,25 +137,25 @@ def render():
           except:
               df3['เดือน'] = pd.to_datetime(df3['เดือน'], format="%d/%m/%Y")
       
-      # เพิ่มคอลัมน์ความแตกต่าง
-      df3['ผลต่าง'] = df3['จ่ายแลก'] - df3['รับคืน']
-      
-      # สร้างกราฟเส้น
-      fig3 = go.Figure()
-      fig3.add_trace(go.Scatter(x=df3['เดือน'], y=df3['จ่ายแลก'], mode='lines+markers', name='จ่ายแลก'))
-      fig3.add_trace(go.Scatter(x=df3['เดือน'], y=df3['รับคืน'], mode='lines+markers', name='รับคืน'))
-      fig3.add_trace(go.Scatter(x=df3['เดือน'], y=df3['ผลต่าง'], mode='lines+markers', name='ผลต่าง'))
-      
-      fig3.update_layout(
-          title="แนวโน้มจ่ายแลก รับคืน และผลต่าง รายเดือน",
-          xaxis_title="เดือน",
-          yaxis_title="จำนวนเหรียญ (หน่วย)",
-          hovermode="x unified"
-      )
-      
-      # แสดงผลผ่าน Streamlit
-      st.title("กราฟแนวโน้มการจ่ายแลก รับคืน และผลต่าง")
-      st.plotly_chart(fig3, use_container_width=True)
+	# เพิ่มคอลัมน์ความแตกต่าง
+	df3['ผลต่าง'] = df3['จ่ายแลก'] - df3['รับคืน']
+	
+	# สร้างกราฟเส้น
+	fig3 = go.Figure()
+	fig3.add_trace(go.Scatter(x=df3['เดือน'], y=df3['จ่ายแลก'], mode='lines+markers', name='จ่ายแลก'))
+	fig3.add_trace(go.Scatter(x=df3['เดือน'], y=df3['รับคืน'], mode='lines+markers', name='รับคืน'))
+	fig3.add_trace(go.Scatter(x=df3['เดือน'], y=df3['ผลต่าง'], mode='lines+markers', name='ผลต่าง'))
+	
+	fig3.update_layout(
+	  title="แนวโน้มจ่ายแลก รับคืน และผลต่าง รายเดือน",
+	  xaxis_title="เดือน",
+	  yaxis_title="จำนวนเหรียญ (หน่วย)",
+	  hovermode="x unified"
+	)
+	
+	# แสดงผลผ่าน Streamlit
+	st.title("กราฟแนวโน้มการจ่ายแลก รับคืน และผลต่าง")
+	st.plotly_chart(fig3, use_container_width=True)
 
 def figures():
     df2 = pd.read_csv("จ่ายแลกส่วนกลาง+hub.csv")
