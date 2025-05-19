@@ -7,6 +7,7 @@ import Coin_production
 import Coin_economy
 import Mint_MMD
 import Historical_disbursment_redemption
+import Ratio
 # Past
 import Historical_Coin_Production_Data
 import Historical_issued_redemption
@@ -75,7 +76,8 @@ with tabs[1]:
         "แผน-ผลผลิตเหรียญกษาปณ์ประจำปี": Coin_production,
         "จำนวนเหรียญหมุนเวียนในระบบเศรษฐกิจ": Coin_economy,
         "สถิติการนำส่งเหรียญกษาปณ์หมุนเวียนจากกองกษาปณ์ให้กองบริหารเงินตรา ประจำปีงบประมาณ 2568": Mint_MMD,
-        "จ่ายสุทธิรายปีของแต่ละหน่วยงาน (2563 - 2568)": Historical_issued_redemption
+        "จ่ายสุทธิรายปีของแต่ละหน่วยงาน (2563 - 2568)": Historical_issued_redemption,
+        "สัดส่วนเหรียญต่อธนบัตรกับธนาคารแห่งประเทศไทย": Ratio
     }
     selected_present = st.selectbox("***เลือกหัวข้อ", list(options_present.keys()), key="present_select")
     options_present[selected_present].render()
